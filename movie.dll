@@ -44,3 +44,9 @@ CREATE TABLE content.person_film_work (
 ALTER TABLE content.genre ADD CONSTRAINT genre_name_unique UNIQUE (name);
 ALTER TABLE content.genre_film_work ADD CONSTRAINT genre_film_work_unique UNIQUE (genre_id, film_work_id);
 ALTER TABLE content.person_film_work ADD CONSTRAINT person_film_work_unique UNIQUE (person_id, film_work_id, role);
+
+CREATE INDEX film_work_creation_date_idx ON content.film_work(creation_date);
+CREATE INDEX film_work_rating_idx ON content.film_work(rating);
+CREATE INDEX film_work_type_idx ON content.film_work(type);
+CREATE INDEX person_full_name_idx ON content.person(full_name);
+CREATE INDEX genre_name_idx ON content.genre(name);
